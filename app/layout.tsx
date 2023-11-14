@@ -32,8 +32,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="config" content={JSON.stringify(getClientConfig())} />
-        <link rel="manifest" href="/site.webmanifest"></link>
-        <script src="/serviceWorkerRegister.js" defer></script>
+        <link
+          rel="manifest"
+          href={`${getClientConfig()?.assetPrefix}/site.webmanifest`}
+        ></link>
+        <script
+          src={`${getClientConfig()?.assetPrefix}/serviceWorkerRegister.js`}
+          defer
+        ></script>
       </head>
       <body>{children}</body>
     </html>

@@ -68,7 +68,12 @@ export const useAccessStore = createPersistStore(
       );
     },
     fetch() {
-      if (fetchState > 0 || getClientConfig()?.buildMode === "export") return;
+      let config = getClientConfig();
+      if (
+        fetchState > 0 ||
+        (config?.buildMode === "export" && !config?.isProxy)
+      )
+        return;
       fetchState = 1;
       fetch("/api/config", {
         method: "post",

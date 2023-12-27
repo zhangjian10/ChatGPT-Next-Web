@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "export": "cross-env BUILD_MODE=export BUILD_APP=1 next build",
+    "export:proxy": "cross-env BUILD_MODE=export BUILD_PROXY=1 BUILD_APP=1 next build",
     "export:dev": "cross-env BUILD_MODE=export BUILD_APP=1 next dev",
     "app:dev": "yarn tauri dev",
     "app:build": "yarn tauri build",
